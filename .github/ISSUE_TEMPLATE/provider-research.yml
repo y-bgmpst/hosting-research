@@ -1,0 +1,51 @@
+name: Provider research
+description: Claim or request research for a provider profile.
+title: "[Research] <provider-id> — <provider name>"
+labels:
+  - research
+body:
+  - type: input
+    id: provider_id
+    attributes:
+      label: Provider ID
+      description: Canonical provider ID from 03_PROVIDER_LIST.md.
+      placeholder: de-example
+    validations:
+      required: true
+  - type: input
+    id: batch_id
+    attributes:
+      label: Batch ID
+      description: Batch from 04_BATCHES.md.
+      placeholder: B01
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Research scope
+      description: State which schema sections are in scope.
+      placeholder: Pricing, infrastructure, network, benchmarks, reliability.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence_plan
+    attributes:
+      label: Evidence plan
+      description: List expected source categories using 11_SOURCE_POLICY.md.
+      placeholder: Official pricing page, PeeringDB, raw YABS output.
+    validations:
+      required: true
+  - type: checkboxes
+    id: confirmations
+    attributes:
+      label: Confirmations
+      options:
+        - label: I will follow 01_RESEARCH_SPEC.md.
+          required: true
+        - label: I will use 02_PROVIDER_SCHEMA.md and 07_OUTPUT_SPEC.md.
+          required: true
+        - label: I will cite sources according to 11_SOURCE_POLICY.md.
+          required: true
+        - label: I will complete 08_QA_CHECKLIST.md before opening a PR.
+          required: true

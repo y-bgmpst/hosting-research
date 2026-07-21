@@ -1,0 +1,50 @@
+name: Provider data correction
+description: Report a correction to an existing provider profile.
+title: "[Correction] <provider-id> — <field>"
+labels:
+  - correction
+body:
+  - type: input
+    id: provider_id
+    attributes:
+      label: Provider ID
+      placeholder: de-example
+    validations:
+      required: true
+  - type: input
+    id: field
+    attributes:
+      label: Field or section
+      placeholder: pricing.plans, asn, datacenter_locations
+    validations:
+      required: true
+  - type: textarea
+    id: current_value
+    attributes:
+      label: Current value
+      description: Copy the existing value or summarize the issue.
+    validations:
+      required: true
+  - type: textarea
+    id: proposed_value
+    attributes:
+      label: Proposed value
+      description: Provide the corrected value and supporting evidence.
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Sources
+      description: Include URLs, source tiers, accessed dates, and archive URLs when required.
+    validations:
+      required: true
+  - type: checkboxes
+    id: confirmations
+    attributes:
+      label: Confirmations
+      options:
+        - label: The correction follows 11_SOURCE_POLICY.md.
+          required: true
+        - label: The correction can be validated against 05_VALIDATION_RULES.md.
+          required: true

@@ -1,0 +1,46 @@
+name: Methodology change
+description: Propose a schema, validation, source policy, or framework change.
+title: "[Methodology] <short description>"
+labels:
+  - methodology
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: Describe the methodology gap or inconsistency.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change
+      description: State the exact documents and sections affected.
+    validations:
+      required: true
+  - type: dropdown
+    id: version_impact
+    attributes:
+      label: Version impact
+      options:
+        - PATCH — clarification or editorial correction
+        - MINOR — additive rule or optional field
+        - MAJOR — breaking schema or validation change
+    validations:
+      required: true
+  - type: textarea
+    id: migration
+    attributes:
+      label: Migration impact
+      description: Explain how existing provider profiles are affected.
+    validations:
+      required: true
+  - type: checkboxes
+    id: confirmations
+    attributes:
+      label: Confirmations
+      options:
+        - label: I checked 12_CHANGELOG.md for versioning requirements.
+          required: true
+        - label: I identified all framework documents that need updates.
+          required: true
